@@ -19,15 +19,15 @@ script:
   - docker build -t udagram-api-feed ./udagram-api-feed
   - docker build -t udagram-frontend ./udagram-frontend
   - docker build -t reverseproxy ./udagram-reverseproxy
-  - docker tag udagram-api-user caystone/udagram-api-user:v2
-  - docker tag udagram-api-feed caystone/udagram-api-feed:v1
-  - docker tag udagram-frontend caystone/udagram-frontend:v2
-  - docker tag reverseproxy caystone/reverseproxy:v1
+  - docker tag udagram-api-user caystone99/udagram-api-user:v2
+  - docker tag udagram-api-feed caystone99/udagram-api-feed:v1
+  - docker tag udagram-frontend caystone99/udagram-frontend:v2
+  - docker tag reverseproxy caystone99/reverseproxy:v1
 
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push caystone/udagram-api-feed:v1
-  - docker push caystone/udagram-api-user:v2
-  - docker push caystone/udagram-frontend:v2
-  - docker push caystone/reverseproxy:v1
+  - docker push caystone99/udagram-api-feed:v1
+  - docker push caystone99/udagram-api-user:v2
+  - docker push caystone99/udagram-frontend:v2
+  - docker push caystone99/reverseproxy:v1
